@@ -1,0 +1,113 @@
+.about {
+    background: var(--color-bg-primary);
+}
+
+.about-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 60px;
+    align-items: center;
+}
+
+.about-image {
+    position: relative;
+    border-radius: var(--radius-lg);
+    overflow: hidden;
+    aspect-ratio: 4 / 3;
+    background: var(--gradient-card);
+    border: 1px solid var(--color-border);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.about-image-pattern {
+    position: absolute;
+    inset: 0;
+    background-image:
+        linear-gradient(135deg, rgba(99, 102, 241, 0.1) 25%, transparent 25%),
+        linear-gradient(225deg, rgba(6, 182, 212, 0.1) 25%, transparent 25%),
+        linear-gradient(315deg, rgba(99, 102, 241, 0.1) 25%, transparent 25%),
+        linear-gradient(45deg, rgba(6, 182, 212, 0.1) 25%, transparent 25%);
+    background-size: 60px 60px;
+    opacity: 0.6;
+}
+
+.about-image-content {
+    position: relative;
+    z-index: 1;
+    text-align: center;
+    padding: 40px;
+}
+
+.about-image-icon {
+    font-size: 4rem;
+    margin-bottom: 16px;
+}
+
+.about-image-text {
+    font-family: var(--font-heading);
+    font-size: 1.5rem;
+    font-weight: 700;
+    background: var(--gradient-text);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+.about-text p {
+    color: var(--color-text-secondary);
+    margin-bottom: 24px;
+    font-size: 1.05rem;
+}
+
+.about-features {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 16px;
+    margin-top: 32px;
+}
+
+.about-feature {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 14px 18px;
+    border-radius: var(--radius-md);
+    background: var(--color-surface);
+    border: 1px solid var(--color-border);
+    transition: all var(--transition-fast);
+}
+
+.about-feature:hover {
+    border-color: var(--color-border-hover);
+    background: rgba(99, 102, 241, 0.05);
+}
+
+.about-feature-icon {
+    width: 36px;
+    height: 36px;
+    border-radius: var(--radius-sm);
+    background: var(--gradient-accent);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1rem;
+    flex-shrink: 0;
+}
+
+.about-feature-label {
+    font-weight: 500;
+    font-size: 0.9rem;
+}
+
+@media (max-width: 768px) {
+    .about-grid {
+        grid-template-columns: 1fr;
+        gap: 40px;
+    }
+
+    .about-features {
+        grid-template-columns: 1fr;
+    }
+}

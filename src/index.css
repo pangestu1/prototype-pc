@@ -1,0 +1,244 @@
+/* ============================================
+   DESIGN SYSTEM — NovaTech Company Profile
+   ============================================ */
+
+:root {
+  /* Colors */
+  --color-bg-primary: #0a0e1a;
+  --color-bg-secondary: #111827;
+  --color-bg-card: rgba(17, 24, 39, 0.6);
+  --color-bg-card-hover: rgba(30, 41, 59, 0.8);
+  --color-surface: rgba(255, 255, 255, 0.03);
+
+  --color-accent-primary: #6366f1;
+  --color-accent-secondary: #8b5cf6;
+  --color-accent-tertiary: #06b6d4;
+  --color-accent-glow: rgba(99, 102, 241, 0.3);
+  --color-accent-glow-cyan: rgba(6, 182, 212, 0.3);
+
+  --color-text-primary: #f1f5f9;
+  --color-text-secondary: #94a3b8;
+  --color-text-muted: #64748b;
+
+  --color-border: rgba(255, 255, 255, 0.08);
+  --color-border-hover: rgba(99, 102, 241, 0.4);
+
+  --color-whatsapp: #25D366;
+  --color-whatsapp-hover: #128C7E;
+
+  /* Gradients */
+  --gradient-hero: linear-gradient(135deg, #0a0e1a 0%, #1e1b4b 50%, #0f172a 100%);
+  --gradient-accent: linear-gradient(135deg, #6366f1, #8b5cf6, #06b6d4);
+  --gradient-card: linear-gradient(135deg, rgba(99, 102, 241, 0.1), rgba(6, 182, 212, 0.05));
+  --gradient-text: linear-gradient(135deg, #6366f1, #06b6d4);
+
+  /* Typography */
+  --font-heading: 'Outfit', sans-serif;
+  --font-body: 'Inter', sans-serif;
+
+  /* Spacing */
+  --section-padding: 100px 0;
+  --container-max: 1200px;
+  --container-padding: 0 24px;
+
+  /* Border Radius */
+  --radius-sm: 8px;
+  --radius-md: 12px;
+  --radius-lg: 20px;
+  --radius-xl: 28px;
+
+  /* Shadows */
+  --shadow-card: 0 4px 30px rgba(0, 0, 0, 0.3);
+  --shadow-glow: 0 0 40px rgba(99, 102, 241, 0.15);
+  --shadow-glow-hover: 0 0 60px rgba(99, 102, 241, 0.25);
+
+  /* Transitions */
+  --transition-fast: 0.2s ease;
+  --transition-base: 0.3s ease;
+  --transition-slow: 0.5s ease;
+}
+
+/* Reset & Base */
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+  font-size: 16px;
+}
+
+body {
+  font-family: var(--font-body);
+  background-color: var(--color-bg-primary);
+  color: var(--color-text-primary);
+  line-height: 1.7;
+  overflow-x: hidden;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-heading);
+  line-height: 1.2;
+  font-weight: 700;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+ul {
+  list-style: none;
+}
+
+/* Container */
+.container {
+  max-width: var(--container-max);
+  margin: 0 auto;
+  padding: var(--container-padding);
+}
+
+/* Section styling */
+.section {
+  padding: var(--section-padding);
+  position: relative;
+}
+
+.section-label {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 0.85rem;
+  font-weight: 600;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: var(--color-accent-primary);
+  margin-bottom: 16px;
+}
+
+.section-label::before {
+  content: '';
+  display: inline-block;
+  width: 30px;
+  height: 2px;
+  background: var(--gradient-accent);
+  border-radius: 2px;
+}
+
+.section-title {
+  font-size: clamp(2rem, 5vw, 3rem);
+  margin-bottom: 16px;
+  background: var(--gradient-text);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.section-subtitle {
+  font-size: 1.1rem;
+  color: var(--color-text-secondary);
+  max-width: 600px;
+  margin-bottom: 60px;
+}
+
+/* Glassmorphism card */
+.glass-card {
+  background: var(--color-bg-card);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-card);
+  transition: all var(--transition-base);
+}
+
+.glass-card:hover {
+  border-color: var(--color-border-hover);
+  box-shadow: var(--shadow-glow-hover);
+  transform: translateY(-4px);
+}
+
+/* Animations */
+.fade-up {
+  opacity: 0;
+  transform: translateY(40px);
+  transition: opacity 0.7s ease, transform 0.7s ease;
+}
+
+.fade-up.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Button styles */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 14px 32px;
+  border-radius: var(--radius-xl);
+  font-family: var(--font-body);
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  border: none;
+  transition: all var(--transition-base);
+  position: relative;
+  overflow: hidden;
+}
+
+.btn-primary {
+  background: var(--gradient-accent);
+  color: #fff;
+  box-shadow: 0 4px 20px var(--color-accent-glow);
+}
+
+.btn-primary:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 30px var(--color-accent-glow);
+}
+
+.btn-outline {
+  background: transparent;
+  color: var(--color-text-primary);
+  border: 1px solid var(--color-border);
+}
+
+.btn-outline:hover {
+  border-color: var(--color-accent-primary);
+  background: rgba(99, 102, 241, 0.1);
+}
+
+.btn-whatsapp {
+  background: var(--color-whatsapp);
+  color: #fff;
+  box-shadow: 0 4px 20px rgba(37, 211, 102, 0.3);
+}
+
+.btn-whatsapp:hover {
+  background: var(--color-whatsapp-hover);
+  transform: translateY(-2px);
+  box-shadow: 0 8px 30px rgba(37, 211, 102, 0.4);
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  :root {
+    --section-padding: 60px 0;
+  }
+
+  .section-subtitle {
+    margin-bottom: 40px;
+  }
+}
